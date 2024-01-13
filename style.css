@@ -12,7 +12,6 @@
     height: 100vh;
     background-image: url(./Picture/Solar-System.webp);
     background-size: cover;
-    box-shadow: inset 0 0 300px rgba(255, 255, 255, 0.5);
 }
 
 .y-fullskrin__header {
@@ -80,14 +79,14 @@
     font-size: 22px;
     position: relative;
     margin-left: 100px;
-    color: #4d4d4d;
+    color: #000000;
     font-weight: 800;
 }
 
 .y-fullskrin__text::before {
     position: absolute;
     content: '';
-    background-color: #4d4d4d;
+    background-color: #000000;
     width: 75px;
     height: 3px;
     bottom: 50%;
@@ -106,6 +105,111 @@
 
 .y-header__block {
     display: none;
+}
+
+.y-fullskrin__button {
+    padding: 15px 25px;
+    font-family: 'Space Mono';
+    color: #000000;
+    border-radius: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: #ffffff;
+    font-size: 20px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.y-fullskrin__button:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.block {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
+    background: linear-gradient(#a812b2, #e7a74e);
+    animation: border-transform 7s linear infinite;
+    transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
+        right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
+        transform 250ms 1100ms ease,
+        width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
+        height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    top: -15%;
+    right: -10%;
+}
+
+@keyframes border-transform {
+
+    0%,
+    100% {
+        border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    }
+
+    14% {
+        border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+    }
+
+    28% {
+        border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+    }
+
+    42% {
+        border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+    }
+
+    56% {
+        border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
+    }
+
+    70% {
+        border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+    }
+
+    84% {
+        border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+    }
+}
+
+.block:nth-child(2) {
+    left: -10%;
+    top: 60%;
+    background: linear-gradient(#89e229, #a947e1);
+    animation: transform 5s linear infinite;
+}
+
+@keyframes transform {
+
+    0%,
+    100% {
+        border-radius: 53% 47% 44% 56% / 65% 38% 62% 55%;
+    }
+
+    14% {
+        border-radius: 50% 70% 34% 56% / 39% 50% 30% 61%;
+    }
+
+    28% {
+        border-radius: 44% 56% 48% 52% / 59% 60% 30% 41%;
+    }
+
+    42% {
+        border-radius: 51% 49% 65% 35% / 71% 28% 72% 29%;
+    }
+
+    56% {
+        border-radius: 71% 49% 77% 23% / 60% 40% 60% 20%;
+    }
+
+    70% {
+        border-radius: 40% 60% 44% 56% / 66% 58% 42% 34%;
+    }
+
+    84% {
+        border-radius: 56% 64% 60% 40% / 45% 71% 49% 75%;
+    }
 }
 
 .section-center {
@@ -472,6 +576,10 @@
     .y-header__title {
         margin-top: 10px;
     }
+
+    .y-fullskrin {
+        box-shadow: none;
+    }
 }
 
 @media (max-width: 850px) {
@@ -545,13 +653,30 @@
         font-size: 5vh;
         line-height: 100px;
     }
+
+    .y-fullskrin__title {
+        font-size: 28px;
+    }
+
+    .y-fullskrin__text {
+        color: #fff;
+    }
+
+    .y-fullskrin__text::before {
+        background-color: #fff;
+    }
 }
 
-@media (max-width: 420px) {}
+@media (max-width: 420px) {
+    .y-fullskrin__title {
+        line-height: 50px;
+    }
+}
 
 @media (max-width: 350px) {
     .y-fullskrin__title {
         font-size: 28px;
+        line-height: 50px;
     }
 
     .y-fullskrin__text {
@@ -570,5 +695,9 @@
     .nav ul li a {
         font-size: 4vh;
         line-height: 80px;
+    }
+
+    .y-fullskrin__block {
+        margin-top: 170px;
     }
 }
